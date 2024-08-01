@@ -10,9 +10,7 @@ function myTestFunction(): string {
 
 // Определение маршрута GET
 app.get('/', (req: Request, res: Response) => {
-  const result = myTestFunction();
-  console.log(result); // Вывод результата в консоль
-  res.send(result);
+  res.send(myTestFunction());
 });
 
 // Запуск сервера
