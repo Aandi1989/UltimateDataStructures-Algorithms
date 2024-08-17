@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import { MyArray } from './part1/TypeScript/Arrays';
 import { LinkedList } from './part1/TypeScript/LinkedLists';
+import { Stack } from './part1/TypeScript/Stacks';
 
 const app = express();
 const port = 3000;
@@ -12,13 +13,10 @@ function myTestFunction(): string {
 
 // Определение маршрута GET
 app.get('/', (req: Request, res: Response) => {
-  const list = new LinkedList();
-  list.addLast(10);
-  list.addLast(20);
-  list.addLast(30);
-  list.addLast(40);
-  list.addLast(50);
-  console.log(list.findTheMiddle());
+  const stack = new Stack<string>();
+  // stack.push('1');
+  // stack.push('2');
+  console.log(stack.isBalances('(12+2)'));
   res.send(myTestFunction());
 });
 

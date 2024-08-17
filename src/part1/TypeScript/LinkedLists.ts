@@ -6,10 +6,6 @@ class MyNode<T> {
         this.value = value;
     }
 
-    // public setValue(value: T){
-    //     this.value = value;
-    // }
-
     public toString(): string {
         return `Value: ${this.value}, Next: ${this.next ? this.next.value : 'null'}`;
     }
