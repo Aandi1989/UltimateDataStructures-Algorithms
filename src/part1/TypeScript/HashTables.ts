@@ -36,7 +36,7 @@ export class HashTable<K, V> {
         this.buckets[index] = bucket;
     }
 
-    get(key: K): V | undefined {
+    public get(key: K): V | undefined {
         const index = this.hash(key);
         const bucket = this.buckets[index];
 
