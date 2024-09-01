@@ -8,6 +8,7 @@ import { BinaryTree } from './part2/TypeScript/BinaryTree';
 import { AVLTree } from './part2/TypeScript/AVLTree';
 import { Heap, MaxHeap } from './part2/TypeScript/Heap';
 import { Trie } from './part2/TypeScript/Tries';
+import { Graph } from './part2/TypeScript/Graphs';
 
 const app = express();
 const port = 3000;
@@ -19,20 +20,14 @@ function myTestFunction(): string {
 
 // Определение маршрута GET
 app.get('/', (req: Request, res: Response) => {
-  let trie = new Trie();
-  // trie.insert('cat');
-  // trie.insert('can');
-  // trie.insert('canada');
-  // trie.printStructure();
-  // console.log(trie.contains('canada'));
-  trie.insert('car');
-  // trie.traverse();
-  trie.insert('care');
-  trie.insert('careful');
-  console.log(trie.findWords('car'))
-  // trie.remove("care");
-  // console.log(trie.contains('care'));
-  // console.log(trie.contains('car'));
+  const graph = new Graph();
+  graph.addNode("A");
+  graph.addNode("B");
+  graph.addNode("C");
+  graph.addEdge("A", "B");
+  graph.addEdge("B", "C");
+  graph.addEdge("A", "C");
+  console.log(graph.hasCycle());
   res.send(myTestFunction());
 });
 
