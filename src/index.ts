@@ -9,6 +9,7 @@ import { AVLTree } from './part2/TypeScript/AVLTree';
 import { Heap, MaxHeap } from './part2/TypeScript/Heap';
 import { Trie } from './part2/TypeScript/Tries';
 import { Graph } from './part2/TypeScript/Graphs';
+import { UndirectedGraph } from './part2/TypeScript/UndirectedGraphs';
 
 const app = express();
 const port = 3000;
@@ -20,14 +21,29 @@ function myTestFunction(): string {
 
 // Определение маршрута GET
 app.get('/', (req: Request, res: Response) => {
-  const graph = new Graph();
+  const graph = new UndirectedGraph();
+  // graph.addNode("A");
+  // graph.addNode("B");
+  // graph.addNode("C");
+  // graph.addNode("D");
+  // graph.addNode("E");
+  // graph.addEdge("A", "B", 1);
+  // graph.addEdge("A", "C", 4);
+  // graph.addEdge("B", "C", 1);
+  // graph.addEdge("B", "D", 2);
+  // graph.addEdge("C", "D", 5);
+  // graph.addEdge("D", "E", 1);
+  // const distances = graph.getShortestDistance("A");
+  // graph.printPaths("A");
+  // console.log(distances);
   graph.addNode("A");
   graph.addNode("B");
   graph.addNode("C");
-  graph.addEdge("A", "B");
-  graph.addEdge("B", "C");
-  graph.addEdge("A", "C");
+  graph.addEdge("A", "B", 0);
+  graph.addEdge("A", "C", 0);
+  graph.addEdge("C", "A", 0);
   console.log(graph.hasCycle());
+
   res.send(myTestFunction());
 });
 
