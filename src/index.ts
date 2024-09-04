@@ -11,6 +11,7 @@ import { Trie } from './part2/TypeScript/Tries';
 import { Graph } from './part2/TypeScript/Graphs';
 import { UndirectedGraph } from './part2/TypeScript/UndirectedGraphs';
 import { Sorter } from './part3/TypeScript/Sorting';
+import { Search } from './part3/TypeScript/Searching';
 
 const app = express();
 const port = 3000;
@@ -22,10 +23,9 @@ function myTestFunction(): string {
 
 // Определение маршрута GET
 app.get('/', (req: Request, res: Response) => {
-  const numbers: number[] = [7, 3, 1, 4, 6, 4, 5, 2];
-  const sorter = new Sorter();
-  sorter.bucketSort(numbers);
-  console.log(numbers.toString())
+  const numbers: number[] = [1, 3, 4, 6, 8, 11, 15];
+  const searcher = new Search();
+  console.log(searcher.exponentialSearch(numbers, 9))
   res.send(myTestFunction());
 });
 
